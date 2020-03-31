@@ -34,13 +34,13 @@ module.exports = {
         javascriptEnabled: true,
       }
     },
-    {
-      resolve: `gatsby-source-cosmicjs`,
-      options: {
-        bucketSlug: `my-portfolio-site`, // Get this value in Bucket > Settings
-        objectTypes: [`pages`],
-      }
-    },
+    // {
+    //   resolve: `gatsby-source-cosmicjs`,
+    //   options: {
+    //     bucketSlug: `my-portfolio-site`, // Get this value in Bucket > Settings
+    //     objectTypes: [`pages`],
+    //   }
+    // },
     {
       resolve: 'gatsby-source-filesystem', 
       options: { 
