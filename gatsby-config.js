@@ -27,6 +27,27 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     }, 
+    `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-plugin-less`,
+      options: {
+        javascriptEnabled: true,
+      }
+    },
+    {
+      resolve: `gatsby-source-cosmicjs`,
+      options: {
+        bucketSlug: `my-portfolio-site`, // Get this value in Bucket > Settings
+        objectTypes: [`pages`],
+      }
+    },
+    {
+      resolve: 'gatsby-source-filesystem', 
+      options: { 
+        name: `src`,
+        path: `${__dirname}/src/`,
+      }, 
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
