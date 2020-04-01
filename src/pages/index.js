@@ -4,7 +4,7 @@ import Header from '../components/header'
 
 
 export default () => (
-  <div style={{ color: `purple` }}>
+  <div style={{ color: `purple`, margin: `3 rem auto`, maxWidth: 600}}>
     <Link to="/contact">Contact</Link>
     <Header headerText="Hello Gatsby!"></Header>
     <p>What a world.</p>
