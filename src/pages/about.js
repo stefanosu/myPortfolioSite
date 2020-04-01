@@ -2,15 +2,28 @@ import React from 'react'
 import Header from '../components/header'
 import Container from '../components/container'
 import Layout from '../components/layout'
+import {graphql} from 'gatsby'
 
-export default () => (
+export default ({ data }) => (
 <Layout> 
   <Container> 
     <div style={{color:`teal`}}>
-    <Header headerText='About Gatsby'/>
-    <Header headerText='Wow Gatsby is awesome!'/>
+    <h1>{data.site.siteMetadata.title}</h1>
     <p>React is cool!</p>
     </div>
-  </Container>
-</Layout>  
-)
+    </Container>
+    </Layout>  
+    )
+    
+    
+
+
+export const query = graphql `
+  query{
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`
