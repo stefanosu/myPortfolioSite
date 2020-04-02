@@ -31,7 +31,7 @@ export default ({ data }) => {
                       <td>{node.birthTime}</td>
                     </tr>
                   ))}
-                  </tbody>
+                </tbody>
             </table>
         </div>
       </Container>
