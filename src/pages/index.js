@@ -1,7 +1,7 @@
 import React from "react"
 import Header from '../components/header'
 import Layout from '../components/layout'
-import {graphql} from 'gatsby'
+import {graphql, Link} from 'gatsby'
 
 
 export default ({data}) => {
@@ -18,17 +18,19 @@ export default ({data}) => {
       <h4>{data.allMarkdownRemark.edges.totalCount}Posts</h4>
       {data.allMarkdownRemark.edges.map(({node}) => (
         <div key={node.id}>
+        <Link to={node.fields.slug}>
         <h3
-            >
-              {node.frontmatter.title}{" "}
-              <span
-              >
-                — {node.frontmatter.description}
+        >
+        {node.frontmatter.title}{" "}
+        <span
+        >
+        — {node.frontmatter.description}
                   {node.frontmatter.date}
-              </span>
-            </h3>
-            <p>{node.excerpt}</p>
-          </div>
+                  </span>
+                    </h3>
+                    <p>{node.excerpt}</p>
+                  </Link>
+                </div>
       ))}
         <button>Click me</button>
       </div>
@@ -46,6 +48,9 @@ export const query =  graphql `
           frontmatter {
             title
             description
+          }
+          fields {
+            slug
           }
           excerpt
         }
